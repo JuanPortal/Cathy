@@ -3,3 +3,4 @@ gtts
 python-time
 PyNaCl
 discord.py[voice]
+ffmpeg
