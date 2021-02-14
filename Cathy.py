@@ -2,7 +2,6 @@ from discord.ext import commands
 import discord
 from gtts import gTTS
 import time
-import PyNaCl
 
 client = commands.Bot(command_prefix="$")
 
