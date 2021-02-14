@@ -2,3 +2,4 @@ discord.py
 gtts
 python-time
 PyNaCl
+discord.py[voice]
