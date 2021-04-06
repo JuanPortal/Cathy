@@ -64,7 +64,8 @@ async def help(ctx):
     em = discord.Embed(
         title="Help",
         description="***$di*** lee el mensaje en español\n\n***$say*** lee el mensaje en inglés\n\n***$unir*** une a \
-        Cathy al canal de voz\n\n***$salir*** bota a Cathy del canal de voz"
+        Cathy al canal de voz\n\n***$salir*** bota a Cathy del canal de voz\n\n***audio*** reproduce el audio \
+        seleccionado\n\n***audios*** muestra la lista de audios"
     )
     await ctx.send(embed=em)
     
@@ -162,8 +163,8 @@ async def audio(ctx, *args):
 async def audios(ctx):
     em = discord.Embed(
         title="Audios",
-        description="\nCardi\n\nCuack\n\nGaaaa\n\nLapo\n\nTengo miedo\n\nOh ñooo\n\nPero qué ven mis oídos, mano\n\nPa\
-        pi, cáchame\n\nSaGAAAAAAAAAAAAAsti\n\nA la mierda, Tilín"
+        description="\nCardi\n\nCuack\n\nGaaaa\n\nLapo\n\nTengo miedo\n\nOh ñooo\n\nPero qué ven mis oí\
+        dos, mano\n\nPapi, cáchame\n\nSaGAAAAAAAAAAAAAsti\n\nA la mierda, Tilín"
     )
     await ctx.send(embed=em)
 
