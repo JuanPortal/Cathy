@@ -93,9 +93,7 @@ async def audio(ctx, *args):
     audio_oidos = ["queven", "chorri", "mis oidos", "oidos", "qvenmisoidos"]
     audio_sagasti = ["sagasti"]
     audio_auron = ["tengo", "miedo", "auron"]
-    total_audios = [audio_tilin, audio_cardi, audio_cuack, audio_gaa, audio_lapo, audio_ohno, audio_papi,
-                    audio_oidos, audio_sagasti, audio_auron]
-
+    
     channel = ctx.message.author.voice.channel
     vc = await channel.connect()
 
