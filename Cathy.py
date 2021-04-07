@@ -64,8 +64,8 @@ async def help(ctx):
     em = discord.Embed(
         title="Help",
         description="***$di*** lee el mensaje en español\n\n***$say*** lee el mensaje en inglés\n\n***$unir*** une a \
-        Cathy al canal de voz\n\n***$salir*** bota a Cathy del canal de voz\n\n***audio*** reproduce el audio \
-        seleccionado\n\n***audios*** muestra la lista de audios"
+        Cathy al canal de voz\n\n***$salir*** bota a Cathy del canal de voz\n\n***$audio*** reproduce el audio \
+        seleccionado\n\n***$audios*** muestra la lista de audios"
     )
     await ctx.send(embed=em)
     
@@ -86,12 +86,12 @@ def arreglar(palabra):
 async def audio(ctx, *args):
     audio_tilin = ["tilin"]
     audio_cardi = ["cardi", "risa"]
-    audio_cuack = ["cuack", "cuac", "pato", "kuac", "kuack"]
+    audio_cuack = ["cuack", "cuac", "cuak", "pato", "kuack", "kuac", "kuak"]
     audio_gaa = ["gaa", "gaaa", "gaaaa", "gaaaaa"]
     audio_lapo = ["lapo", "push", "plus"]
     audio_ohno = ["oño", "ohño", "ño", "oh"]
     audio_papi = ["papicachame", "papi", "cachame", "kchame"]
-    audio_oidos = ["queven", "chorri", "mis oidos", "oidos", "qvenmisoidos"]
+    audio_oidos = ["queven", "chorri", "mano", "oidos", "qvenmisoidos", "que", "ven"]
     audio_sagasti = ["sagasti"]
     audio_auron = ["tengo", "miedo", "auron"]
     
@@ -163,8 +163,8 @@ async def audio(ctx, *args):
 async def audios(ctx):
     em = discord.Embed(
         title="Audios",
-        description="\nCardi\n\nCuack\n\nGaaaa\n\nLapo\n\nTengo miedo\n\nOh ñooo\n\nPero qué ven mis oí\
-        dos, mano\n\nPapi, cáchame\n\nSaGAAAAAAAAAAAAAsti\n\nA la mierda, Tilín"
+        description="\nCardi\n\nCuack\n\nGaaa\n\nLapo\n\nTengo miedo\n\nOh ñooo\n\n \
+        Pero qué ven mis oídos, mano\n\nPapi, cáchame\n\nSagasti\n\nA la mierda, Tilín"
     )
     await ctx.send(embed=em)
 
