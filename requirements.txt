@@ -4,4 +4,3 @@ python-time
 PyNaCl
 discord.py[voice]
 ffmpeg
-random==3.9.4
