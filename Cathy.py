@@ -13,13 +13,13 @@ async def on_ready():
     print("Chatty Cathy ready to talk!")
 
 
-@client.command(pass_context=True)
+@client.command(pass_context=True, aliases=["join"])
 async def unir(ctx):
     channel = ctx.message.author.voice.channel
     await channel.connect()
 
 
-@client.command(pass_context=True)
+@client.command(pass_context=True, aliases=["leave", "fuckoff"])
 async def salir(ctx):
     await ctx.guild.voice_client.disconnect()
 
@@ -95,8 +95,9 @@ async def audio(ctx, *args):
     audio_oidos = ["queven", "chorri", "mano", "oido", "qvenmisoidos", "que", "ven"]
     audio_sagasti = ["sagasti"]
     audio_auron = ["tengo", "miedo", "auron"]
-    audio_noni = ["pamela", "noo", "noni", "enojada"]
+    audio_nooo = ["pamela", "noo", "noni", "enojada"]
     audio_chupetin = ["chupetin", "chupete"]
+    audio_aumrd = ["au", "mierda", "mrd"]
 
     channel = ctx.message.author.voice.channel
     vc = await channel.connect()
@@ -167,11 +168,17 @@ async def audio(ctx, *args):
         time.sleep(3)
         await ctx.guild.voice_client.disconnect()
 
-    elif any(word in arreglar(str(args)).lower() for word in audio_noni):
+    elif any(word in arreglar(str(args)).lower() for word in audio_nooo):
         await ctx.channel.purge(limit=1)
         num = random.randint(1, 3)
         vc.play(discord.FFmpegPCMAudio(f"audios/Noooo{num}.mp3"))
         # print(num)
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+
+    elif any(word in arreglar(str(args)).lower() for word in audio_aumrd):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Au, mrd.mp3"))
         time.sleep(2)
         await ctx.guild.voice_client.disconnect()
 
@@ -181,7 +188,8 @@ async def audios(ctx):
     em = discord.Embed(
         title="Audios",
         description="\nCardi\n\nCuack\n\nGaaa\n\nLapo\n\nTengo miedo\n\nOh ñooo\n\n \
-        Pero qué ven mis oídos, mano\n\nPapi, cáchame\n\nSagasti\n\nA la mierda, Tilín\n\nChupetín\n\nPamela enojada"
+        Pero qué ven mis oídos, mano\n\nPapi, cáchame\n\nSagasti\n\nA la mierda, Tilín\n\nChupetín\n\n \
+        Pamela enojada\n\nAu, mierda"
     )
     await ctx.send(embed=em)
 
