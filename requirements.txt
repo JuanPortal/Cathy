@@ -4,4 +4,4 @@ python-time
 PyNaCl
 discord.py[voice]
 ffmpeg
-random
+python-random
