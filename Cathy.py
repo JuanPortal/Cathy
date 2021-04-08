@@ -2,6 +2,7 @@ from discord.ext import commands
 import discord
 from gtts import gTTS
 import time
+import random
 
 client = commands.Bot(command_prefix="$")
 client.remove_command("help")
@@ -16,8 +17,8 @@ async def on_ready():
 async def unir(ctx):
     channel = ctx.message.author.voice.channel
     await channel.connect()
-    
-    
+
+
 @client.command(pass_context=True)
 async def salir(ctx):
     await ctx.guild.voice_client.disconnect()
@@ -39,8 +40,8 @@ async def di(ctx, *args):
 
     time.sleep(3)
     await ctx.guild.voice_client.disconnect()
-    
-    
+
+
 @client.command(pass_context=True)
 async def say(ctx, *args):
     await ctx.channel.purge(limit=1)
@@ -57,8 +58,8 @@ async def say(ctx, *args):
 
     time.sleep(3)
     await ctx.guild.voice_client.disconnect()
-    
-    
+
+
 @client.command(pass_context=True)
 async def help(ctx):
     em = discord.Embed(
@@ -68,7 +69,7 @@ async def help(ctx):
         seleccionado\n\n***$audios*** muestra la lista de audios"
     )
     await ctx.send(embed=em)
-    
+
 
 def arreglar(palabra):
     palabra = palabra.lower()
@@ -91,10 +92,12 @@ async def audio(ctx, *args):
     audio_lapo = ["lapo", "push", "plus"]
     audio_ohno = ["oño", "ohño", "ño", "oh"]
     audio_papi = ["papicachame", "papi", "cachame", "kchame"]
-    audio_oidos = ["queven", "chorri", "mano", "oidos", "qvenmisoidos", "que", "ven"]
+    audio_oidos = ["queven", "chorri", "mano", "oido", "qvenmisoidos", "que", "ven"]
     audio_sagasti = ["sagasti"]
     audio_auron = ["tengo", "miedo", "auron"]
-    
+    audio_noni = ["pamela", "noo", "noni", "enojada"]
+    audio_chupetin = ["chupetin", "chupete"]
+
     channel = ctx.message.author.voice.channel
     vc = await channel.connect()
 
@@ -158,13 +161,27 @@ async def audio(ctx, *args):
         time.sleep(2)
         await ctx.guild.voice_client.disconnect()
 
+    elif any(word in arreglar(str(args)).lower() for word in audio_chupetin):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Chupetín.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+
+    elif any(word in arreglar(str(args)).lower() for word in audio_noni):
+        await ctx.channel.purge(limit=1)
+        num = random.randint(1, 3)
+        vc.play(discord.FFmpegPCMAudio(f"audios/Noooo{num}.mp3"))
+        # print(num)
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+
 
 @client.command(pass_context=True)
 async def audios(ctx):
     em = discord.Embed(
         title="Audios",
         description="\nCardi\n\nCuack\n\nGaaa\n\nLapo\n\nTengo miedo\n\nOh ñooo\n\n \
-        Pero qué ven mis oídos, mano\n\nPapi, cáchame\n\nSagasti\n\nA la mierda, Tilín"
+        Pero qué ven mis oídos, mano\n\nPapi, cáchame\n\nSagasti\n\nA la mierda, Tilín\n\nChupetín\n\nPamela enojada"
     )
     await ctx.send(embed=em)
 
