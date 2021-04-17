@@ -100,6 +100,7 @@ async def audio(ctx, *args):
     audio_aumrd = ["au", "mierda", "mrd"]
     audio_piero = ["shea", "bobo"]
     audio_ahoraque = ["ahora"]
+    audio_equipo = ["equipo", "alfa", "buena", "maravilla", "onda", "dinamita", "escuadron", "lobo"]
 
     channel = ctx.message.author.voice.channel
     vc = await channel.connect()
@@ -195,6 +196,12 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/Ahora qué.mp3"))
         time.sleep(1)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_equipo):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Equipo.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -203,7 +210,8 @@ async def audios(ctx):
         title="Audios",
         description="\nCardi\n\nCuack\n\nGaaa\n\nLapo\n\nTengo miedo\n\nOh ñooo\n\n \
         Pero qué ven mis oídos, mano\n\nPapi, cáchame\n\nSagasti\n\nA la mierda, Tilín\n\nChupetín\n\n \
-        No shea bobo\n\nAu, mierda\n\n¿Ahora qué?"
+        No shea bobo\n\nAu, mierda\n\n¿Ahora qué?\n\nEquipo Alfa Buena Maravilla Onda \
+        Dinamita Escuadrón Lobo"
     )
     await ctx.send(embed=em)
 
