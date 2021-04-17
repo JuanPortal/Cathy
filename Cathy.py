@@ -88,7 +88,7 @@ async def audio(ctx, *args):
     audio_tilin = ["tilin"]
     audio_cardi = ["cardi", "risa"]
     audio_cuack = ["cuack", "cuac", "cuak", "pato", "kuack", "kuac", "kuak"]
-    audio_gaa = ["gaa", "gaaa", "gaaaa", "gaaaaa"]
+    audio_gaa = ["ga"]
     audio_lapo = ["lapo", "push", "plus"]
     audio_ohno = ["oño", "ohño", "ño", "oh"]
     audio_papi = ["papicachame", "papi", "cachame", "kchame"]
@@ -99,6 +99,7 @@ async def audio(ctx, *args):
     audio_chupetin = ["chupetin", "chupete"]
     audio_aumrd = ["au", "mierda", "mrd"]
     audio_piero = ["shea", "bobo"]
+    audio_ahoraque = ["ahora"]
 
     channel = ctx.message.author.voice.channel
     vc = await channel.connect()
@@ -187,6 +188,12 @@ async def audio(ctx, *args):
         await ctx.channel.purge(limit=1)
         vc.play(discord.FFmpegPCMAudio("audios/Piero.mp3"))
         time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_ahoraque):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Ahora qué.mp3"))
+        time.sleep(1)
         await ctx.guild.voice_client.disconnect()
 
 
