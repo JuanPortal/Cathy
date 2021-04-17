@@ -88,7 +88,7 @@ async def audio(ctx, *args):
     audio_tilin = ["tilin"]
     audio_cardi = ["cardi", "risa"]
     audio_cuack = ["cuack", "cuac", "cuak", "pato", "kuack", "kuac", "kuak"]
-    audio_gaa = ["ga"]
+    audio_gaa = ["gaa"]
     audio_lapo = ["lapo", "push", "plus"]
     audio_ohno = ["oño", "ohño", "ño", "oh"]
     audio_papi = ["papicachame", "papi", "cachame", "kchame"]
@@ -203,7 +203,7 @@ async def audios(ctx):
         title="Audios",
         description="\nCardi\n\nCuack\n\nGaaa\n\nLapo\n\nTengo miedo\n\nOh ñooo\n\n \
         Pero qué ven mis oídos, mano\n\nPapi, cáchame\n\nSagasti\n\nA la mierda, Tilín\n\nChupetín\n\n \
-        No shea bobo\n\nAu, mierda"
+        No shea bobo\n\nAu, mierda\n\n¿Ahora qué?"
     )
     await ctx.send(embed=em)
 
