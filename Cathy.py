@@ -101,6 +101,10 @@ async def audio(ctx, *args):
     audio_piero = ["shea", "bobo"]
     audio_ahoraque = ["ahora"]
     audio_equipo = ["equipo", "alfa", "buena", "maravilla", "onda", "dinamita", "escuadron", "lobo"]
+    audio_cell = ["cell", "momento", "terror"]
+    audio_raiden = ["destinos", "muerte", "peores"]
+    audio_woody = ["woody", "bien", "pensado"]
+    audio_eleccion = ["eleccion"]
 
     channel = ctx.message.author.voice.channel
     vc = await channel.connect()
@@ -202,6 +206,30 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/Equipo.mp3"))
         time.sleep(3)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_cell):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Cell.mp3"))
+        time.sleep(5)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_raiden):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Raiden.mp3"))
+        time.sleep(4)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_woody):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Bien pensado, Woody.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_eleccion):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/No tengo elección.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -211,7 +239,8 @@ async def audios(ctx):
         description="\nCardi\n\nCuack\n\nGaaa\n\nLapo\n\nTengo miedo\n\nOh ñooo\n\n \
         Pero qué ven mis oídos, mano\n\nPapi, cáchame\n\nSagasti\n\nA la mierda, Tilín\n\nChupetín\n\n \
         No shea bobo\n\nAu, mierda\n\n¿Ahora qué?\n\nEquipo Alfa Buena Maravilla Onda \
-        Dinamita Escuadrón Lobo"
+        Dinamita Escuadrón Lobo\n\nEn ese momento... Cell sintió el verdadero terror\n\n \
+        Hay destinos peores que la muerte\n\nBien pensado, Woody\n\n No tengo elección"
     )
     await ctx.send(embed=em)
 
