@@ -78,6 +78,7 @@ def arreglar(palabra):
     palabra = palabra.replace("í", "i")
     palabra = palabra.replace("ó", "o")
     palabra = palabra.replace("ú", "u")
+    palabra = palabra.replace("ü", "u")
     palabra = palabra.replace(" ", "")
     palabra = palabra.replace(",", "")
     return palabra
@@ -102,9 +103,13 @@ async def audio(ctx, *args):
     audio_ahoraque = ["ahora"]
     audio_equipo = ["equipo", "alfa", "buena", "maravilla", "onda", "dinamita", "escuadron", "lobo"]
     audio_cell = ["cell", "momento", "terror"]
-    audio_raiden = ["destinos", "muerte", "peores"]
-    audio_woody = ["woody", "bien", "pensado"]
+    audio_raiden = ["destinos", "muerte", "peores", "raiden"]
+    audio_woody = ["woody", "bien", "pensado", "budi", "budy", "wudy", "wudi", "gudi", "gudy", "wuudy"]
     audio_eleccion = ["eleccion"]
+    audio_ricolas = ["ricolas", "rikolas"]
+    audio_decepcion = ["decepcion", "traicon", "hermano", "amigo"]
+    audio_diablos = ["diablo", "señorita"]
+    audio_nolose = ["dime"]
 
     channel = ctx.message.author.voice.channel
     vc = await channel.connect()
@@ -230,6 +235,30 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/No tengo elección.mp3"))
         time.sleep(2)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_ricolas):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Ricolás.mp3"))
+        time.sleep(7)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_decepcion):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Decepción.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_diablos):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Diablos, señorita.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_nolose):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/No lo sé, tú dime.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -240,7 +269,8 @@ async def audios(ctx):
         Pero qué ven mis oídos, mano\n\nPapi, cáchame\n\nSagasti\n\nA la mierda, Tilín\n\nChupetín\n\n \
         No shea bobo\n\nAu, mierda\n\n¿Ahora qué?\n\nEquipo Alfa Buena Maravilla Onda \
         Dinamita Escuadrón Lobo\n\nEn ese momento... Cell sintió el verdadero terror\n\n \
-        Hay destinos peores que la muerte\n\nBien pensado, Woody\n\n No tengo elección"
+        Hay destinos peores que la muerte\n\nBien pensado, Woody\n\n No tengo elección\n\n \
+        Ricolás\n\nLa decepción, la traición\n\nDiablos, señorita\n\nNo lo sé, tú dime"
     )
     await ctx.send(embed=em)
 
