@@ -275,4 +275,4 @@ async def audios(ctx):
     await ctx.send(embed=em)
 
 
-client.run("ODA1NDg1MTk5MDY0NDMyNjgz.YBbkjA.G2sM7qZafaldkkCkAI9kBzxvfIM")
+client.run("ODA1NDg1MTk5MDY0NDMyNjgz.YBbkjA.-EWlOYH_3e6QPdMcXB6tjXasKYI")
