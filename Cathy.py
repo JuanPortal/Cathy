@@ -119,7 +119,7 @@ async def audio(ctx, *args):
     audio_imbecil = ["imbe", "gracioso", "inve"]
     audio_chikistrikis = ["aqui", "aki", "istri"]
     audio_excita = ["porque", "excita", "tanto"]
-    audio_segovia = ["mama", "puta"]
+    audio_segovia = ["mama", "puta", "segovia", "cgovia", "chancro"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
