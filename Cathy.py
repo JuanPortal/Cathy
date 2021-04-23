@@ -91,13 +91,13 @@ async def audio(ctx, *args):
     audio_cuack = ["cuack", "cuac", "cuak", "pato", "kuack", "kuac", "kuak"]
     audio_gaa = ["gaa"]
     audio_lapo = ["lapo", "push", "plus"]
-    audio_ohno = ["oño", "ohño", "ño", "oh"]
-    audio_papi = ["papicachame", "papi", "cachame", "kchame"]
-    audio_oidos = ["queven", "chorri", "mano", "oido", "qvenmisoidos", "que", "ven"]
+    audio_ohno = ["ño", "oh"]
+    audio_papi = ["papi", "cachame", "kchame", "kachame"]
+    audio_oidos = ["chorri", "mano", "oido", "ven"]
     audio_sagasti = ["sagasti"]
     audio_auron = ["tengo", "miedo", "auron"]
     audio_nooo = ["pamela", "noo", "noni", "enojada"]
-    audio_chupetin = ["chupetin", "chupete"]
+    audio_chupetin = ["chupet"]
     audio_aumrd = ["au", "mierda", "mrd"]
     audio_piero = ["shea", "bobo"]
     audio_ahoraque = ["ahora"]
@@ -106,10 +106,20 @@ async def audio(ctx, *args):
     audio_raiden = ["destinos", "muerte", "peores", "raiden"]
     audio_woody = ["woody", "bien", "pensado", "budi", "budy", "wudy", "wudi", "gudi", "gudy", "wuudy"]
     audio_eleccion = ["eleccion"]
-    audio_ricolas = ["ricolas", "rikolas"]
+    audio_ricolas = ["ricolas", "rikolas", "joel"]
     audio_decepcion = ["decepcion", "traicon", "hermano", "amigo"]
-    audio_diablos = ["diablo", "señorita"]
-    audio_nolose = ["dime"]
+    audio_diablos = ["diablo", "orita"]
+    audio_nolose = ["dime", "lose"]
+    audio_algoandamal = ["algo", "anda", "mal"]
+    audio_manuelgold = ["quee", "kee", "qee"]
+    audio_oferton = ["pt", "ofert"]
+    audio_escuchame = ["escuchame", "huevon", "webon", "wbn", "huebon", "wevon", "wn"]
+    audio_aquaman = ["enfermo", "bruce", "wayne", "batman", "aquaman", "estas"]
+    audio_yamete = ["yamete", "kudasai"]
+    audio_imbecil = ["imbe", "gracioso", "inve"]
+    audio_chikistrikis = ["aqui", "aki", "istri"]
+    audio_excita = ["porque", "excita", "tanto"]
+    audio_segovia = ["mama", "puta"]
 
     channel = ctx.message.author.voice.channel
     vc = await channel.connect()
@@ -259,6 +269,66 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/No lo sé, tú dime.mp3"))
         time.sleep(2)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_algoandamal):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Algo anda mal.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_manuelgold):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Qué.mp3"))
+        time.sleep(1)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_oferton):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Puta, qué ofertón.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_escuchame):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Escúchame, huevón.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_aquaman):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Estás enfermo, Bruce Wayne.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_yamete):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Yamete kudasai.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_imbecil):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Imbécil, te crees muy gracioso.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_chikistrikis):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Aquí no, chikistrikis.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_excita):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Por qué me excita tanto.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_segovia):
+        await ctx.channel.purge(limit=1)
+        vc.play(discord.FFmpegPCMAudio("audios/Tu mamá es una puta.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -270,7 +340,10 @@ async def audios(ctx):
         No shea bobo\n\nAu, mierda\n\n¿Ahora qué?\n\nEquipo Alfa Buena Maravilla Onda \
         Dinamita Escuadrón Lobo\n\nEn ese momento... Cell sintió el verdadero terror\n\n \
         Hay destinos peores que la muerte\n\nBien pensado, Woody\n\n No tengo elección\n\n \
-        Ricolás\n\nLa decepción, la traición\n\nDiablos, señorita\n\nNo lo sé, tú dime"
+        Ricolás\n\nLa decepción, la traición\n\nDiablos, señorita\n\nNo lo sé, tú dime\n\n \
+        Algo anda mal\n\n¿Quééé?\n\nPuta, qué ofertón\n\nEscúchame, huevón\n\n \
+        Estás enfermo, Bruce Wayne\n\nYamete Kudasai\n\nImbécil, ¿te crees muy gracioso?\n\n \
+        Aquí no, chikistrikis\n\n¿Por qué me excita tanto?"
     )
     await ctx.send(embed=em)
 
