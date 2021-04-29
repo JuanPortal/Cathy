@@ -119,7 +119,17 @@ async def audio(ctx, *args):
     audio_imbecil = ["imbe", "gracioso", "inve"]
     audio_chikistrikis = ["aqui", "aki", "istri"]
     audio_excita = ["porque", "excita", "tanto"]
-    audio_segovia = ["mama", "puta", "segovia", "cgovia", "chancro"]
+    audio_segovia = ["mama", "puta", "govia", "madre", "chancro", "vieja"]
+    audio_divertido = ["divertido", "hijo", "perra"]
+    audio_fiesta = ["suponia", "esto", "era", "fiesta"]
+    audio_estrategia = ["llama", "sele", "estrategia"]
+    audio_rick = ["rick", "falso"]
+    audio_yalose = ["yalose", "maric"]
+    audio_exhibiste = ["yanos", "exhibiste", "exibiste", "exiviste"]
+    audio_quierellorar = ["quiere", "llorar", "vasa"]
+    audio_cachera = ["calla", "cachera", "kchera", "kachera", "klla", "kalla"]
+    audio_talla = ["aver", "haber", "esde", "talla"]
+    audio_premiodoble = ["quebien", "qbien", "premio", "doble"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -394,6 +404,86 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/Tu mamá es una puta.mp3"))
         time.sleep(2)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_divertido):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Qué divertido es ese hijo de perra.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_fiesta):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Hey, no se suponía que esto era una fiesta.mp3"))
+        time.sleep(4)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_estrategia):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/A eso se le llama estrategia.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_rick):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/No lo sé, Rick, parece falso.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_yalose):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Ya lo sé, maricón, ya lo sé.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_exhibiste):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Ya nos exhibiste.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_quierellorar):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Quiere llorar.mp3"))
+        time.sleep(1)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_cachera):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Calla, cachera.mp3"))
+        time.sleep(5)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_talla):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/A ver si esto es de tu talla.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_premiodoble):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Muy bien, premios dobles.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -408,7 +498,10 @@ async def audios(ctx):
         Ricolás\n\nLa decepción, la traición\n\nDiablos, señorita\n\nNo lo sé, tú dime\n\n \
         Algo anda mal\n\n¿Quééé?\n\nPuta, qué ofertón\n\nEscúchame, huevón\n\n \
         Estás enfermo, Bruce Wayne\n\nYamete Kudasai\n\nImbécil, ¿te crees muy gracioso?\n\n \
-        Aquí no, chikistrikis\n\n¿Por qué me excita tanto?"
+        Aquí no, chikistrikis\n\n¿Por qué me excita tanto?\n\nQué divertido es ese hijo de perra\n\n \
+        Hey, ¿no se suponía que esto era una fiesta?\n\nA eso se le llama estrategia\n\n \
+        Ya lo sé, maricón, ya lo sé\n\nNo lo sé, Rick, parece falso\n\nYa nos exhibiste\n\n \
+        ¿Quiere llorar?\n\nCalla, cachera\n\nA ver si esto es de tu talla\n\nMuy bien, premios dobles"
     )
     await ctx.send(embed=em)
 
