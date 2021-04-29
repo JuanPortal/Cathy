@@ -121,7 +121,7 @@ async def audio(ctx, *args):
     audio_excita = ["porque", "excita", "tanto"]
     audio_segovia = ["mama", "puta", "govia", "madre", "chancro", "vieja"]
     audio_divertido = ["divertido", "hijo", "perra"]
-    audio_fiesta = ["suponia", "esto", "era", "fiesta"]
+    audio_fiesta = ["suponia", "esto", "fiesta"]
     audio_estrategia = ["llama", "sele", "estrategia"]
     audio_rick = ["rick", "falso"]
     audio_yalose = ["yalose", "maric"]
