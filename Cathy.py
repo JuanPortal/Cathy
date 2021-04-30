@@ -123,13 +123,15 @@ async def audio(ctx, *args):
     audio_divertido = ["divertido", "hijo", "perra"]
     audio_fiesta = ["suponia", "esto", "fiesta"]
     audio_estrategia = ["llama", "sele", "estrategia"]
-    audio_rick = ["rick", "falso"]
+    audio_rick = ["nolose", "rick", "falso"]
     audio_yalose = ["yalose", "maric"]
     audio_exhibiste = ["yanos", "exhibiste", "exibiste", "exiviste"]
     audio_quierellorar = ["quiere", "llorar", "vasa"]
     audio_cachera = ["calla", "cachera", "kchera", "kachera", "klla", "kalla"]
     audio_talla = ["aver", "haber", "esde", "talla"]
     audio_premiodoble = ["quebien", "qbien", "premio", "doble"]
+    audio_listo = ["nome", "parece", "chico", "sea", "listo"]
+    audio_porlaptm = ["porla", "ptm", "puta", "mare", "oepor"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -484,6 +486,22 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/Muy bien, premios dobles.mp3"))
         time.sleep(3)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_listo):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/No me parece que este chico sea muy listo.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_porlaptm):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Oe, por la ptm.mp3"))
+        time.sleep(5)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -501,7 +519,8 @@ async def audios(ctx):
         Aquí no, chikistrikis\n\n¿Por qué me excita tanto?\n\nQué divertido es ese hijo de perra\n\n \
         Hey, ¿no se suponía que esto era una fiesta?\n\nA eso se le llama estrategia\n\n \
         Ya lo sé, maricón, ya lo sé\n\nNo lo sé, Rick, parece falso\n\nYa nos exhibiste\n\n \
-        ¿Quiere llorar?\n\nCalla, cachera\n\nA ver si esto es de tu talla\n\nMuy bien, premios dobles"
+        ¿Quiere llorar?\n\nCalla, cachera\n\nA ver si esto es de tu talla\n\nMuy bien, premios dobles\n\n \
+        No me parece que este chico sea muy listo\n\nOe, por la ptm"
     )
     await ctx.send(embed=em)
 
