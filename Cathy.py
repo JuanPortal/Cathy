@@ -84,7 +84,7 @@ def arreglar(palabra):
     return palabra
 
 
-@client.command(pass_context=True)
+@client.command(pass_context=True, aliases=["a"])
 async def audio(ctx, *args):
     audio_tilin = ["tilin"]
     audio_cardi = ["cardi", "risa"]
