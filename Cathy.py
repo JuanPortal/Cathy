@@ -131,7 +131,7 @@ async def audio(ctx, *args):
     audio_talla = ["aver", "haber", "esde", "talla"]
     audio_premiodoble = ["quebien", "qbien", "premio", "doble"]
     audio_listo = ["nome", "chico", "sea", "listo"]
-    audio_porlaptm = ["porla", "ptm", "mare", "oepor"]
+    audio_porlaptm = ["porla", "ptm", "mare", "oepor", "por la"]
     audio_ratata = ["sabes", "español", "esta", "muy", "tata", "kata", "taka", "traka"]
     audio_soyyo = ["soy", "yo"]
     audio_siquemeinteresa = ["esosi", "queme", "interesa"]
