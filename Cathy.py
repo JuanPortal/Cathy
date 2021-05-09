@@ -93,7 +93,7 @@ async def audio(ctx, *args):
     audio_lapo = ["lapo", "push", "plus"]
     audio_ohno = ["ñoo", "oh"]
     audio_papi = ["papi", "cachame", "kchame", "kachame"]
-    audio_oidos = ["chorri", "mano", "oido", "ven"]
+    audio_oidos = ["chorri", "mano", "oido", "qven", "queven"]
     audio_sagasti = ["sagasti"]
     audio_auron = ["tengo", "miedo", "auron"]
     audio_nooo = ["pamela", "noo", "noni", "enojada"]
