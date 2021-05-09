@@ -91,7 +91,7 @@ async def audio(ctx, *args):
     audio_cuack = ["cuack", "cuac", "cuak", "pato", "kuack", "kuac", "kuak"]
     audio_gaa = ["gaa"]
     audio_lapo = ["lapo", "push", "plus"]
-    audio_ohno = ["ño", "oh"]
+    audio_ohno = ["ñoo", "oh"]
     audio_papi = ["papi", "cachame", "kchame", "kachame"]
     audio_oidos = ["chorri", "mano", "oido", "ven"]
     audio_sagasti = ["sagasti"]
@@ -102,36 +102,42 @@ async def audio(ctx, *args):
     audio_piero = ["shea", "bobo"]
     audio_ahoraque = ["ahora"]
     audio_equipo = ["equipo", "alfa", "buena", "maravilla", "onda", "dinamita", "escuadron", "lobo"]
-    audio_cell = ["cell", "momento", "terror"]
+    audio_cell = ["cell", "momento", "terror", "enese"]
     audio_raiden = ["destinos", "muerte", "peores", "raiden"]
     audio_woody = ["woody", "bien", "pensado", "budi", "budy", "wudy", "wudi", "gudi", "gudy", "wuudy"]
     audio_eleccion = ["eleccion"]
     audio_ricolas = ["ricolas", "rikolas", "joel"]
     audio_decepcion = ["decepcion", "traicon", "hermano", "amigo"]
     audio_diablos = ["diablo", "orita"]
-    audio_nolose = ["dime", "lose"]
+    audio_nolose = ["dime", "nolose"]
     audio_algoandamal = ["algo", "anda", "mal"]
     audio_manuelgold = ["quee", "kee", "qee"]
     audio_oferton = ["pt", "ofert"]
     audio_escuchame = ["escuchame", "huevon", "webon", "wbn", "huebon", "wevon", "wn"]
     audio_aquaman = ["enfermo", "bruce", "wayne", "batman", "aquaman", "estas"]
-    audio_yamete = ["yamete", "kudasai"]
-    audio_imbecil = ["imbe", "gracioso", "inve"]
+    audio_yamete = ["yamete", "kudasai", "udasa"]
+    audio_imbecil = ["imbe", "gracioso", "inve", "crees"]
     audio_chikistrikis = ["aqui", "aki", "istri"]
-    audio_excita = ["porque", "excita", "tanto"]
+    audio_excita = ["porque", "excita", "tanto", "exita"]
     audio_segovia = ["mama", "puta", "govia", "madre", "chancro", "vieja"]
     audio_divertido = ["divertido", "hijo", "perra"]
-    audio_fiesta = ["suponia", "esto", "fiesta"]
+    audio_fiesta = ["suponia", "esto", "fiesta", "nose"]
     audio_estrategia = ["llama", "sele", "estrategia"]
-    audio_rick = ["nolose", "rick", "falso"]
+    audio_rick = ["parece", "rick", "falso"]
     audio_yalose = ["yalose", "maric"]
     audio_exhibiste = ["yanos", "exhibiste", "exibiste", "exiviste"]
     audio_quierellorar = ["quiere", "llorar", "vasa"]
     audio_cachera = ["calla", "cachera", "kchera", "kachera", "klla", "kalla"]
     audio_talla = ["aver", "haber", "esde", "talla"]
     audio_premiodoble = ["quebien", "qbien", "premio", "doble"]
-    audio_listo = ["nome", "parece", "chico", "sea", "listo"]
-    audio_porlaptm = ["porla", "ptm", "puta", "mare", "oepor"]
+    audio_listo = ["nome", "chico", "sea", "listo"]
+    audio_porlaptm = ["porla", "ptm", "mare", "oepor"]
+    audio_ratata = ["sabes", "español", "esta", "muy", "tata", "kata", "taka", "traka"]
+    audio_soyyo = ["soy", "yo"]
+    audio_siquemeinteresa = ["esosi", "queme", "interesa"]
+    audio_tristepayaso = ["Llevo", "vida", "triste", "payaso", "rie", "fuera", "llora", "dentro"]
+    audio_freezer = ["basta", "freezer", "frizer", "friser", "frezer", "freeser", "freser", "goku"]
+    audio_faraon = ["faraon", "love", "shady", "vengo"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -502,6 +508,54 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/Oe, por la ptm.mp3"))
         time.sleep(5)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_ratata):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Tú sabes que mi español está muy ratata.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_soyyo):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Ah, caray, soy yo.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_siquemeinteresa):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Ah, caray, eso sí me interesa.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_tristepayaso):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Llevo la vida de un triste payaso que ríe por fuera y llora por dentro.mp3"))
+        time.sleep(8)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_freezer):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Ya basta, Freezer.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_faraon):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Oh, me vengo.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -520,7 +574,10 @@ async def audios(ctx):
         Hey, ¿no se suponía que esto era una fiesta?\n\nA eso se le llama estrategia\n\n \
         Ya lo sé, maricón, ya lo sé\n\nNo lo sé, Rick, parece falso\n\nYa nos exhibiste\n\n \
         ¿Quiere llorar?\n\nCalla, cachera\n\nA ver si esto es de tu talla\n\nMuy bien, premios dobles\n\n \
-        No me parece que este chico sea muy listo\n\nOe, por la ptm"
+        No me parece que este chico sea muy listo\n\nOe, por la ptm\n\n \
+        Tú sabes que mi español está muy ratata\n\nAh, caray, soy yo\n\nAh, caray, eso sí me interesa\n\n \
+        Llevo la vida de un triste payaso que ríe por fuera y llora por dentro\n\nYa basta, Freezer\n\n \
+        Oh, me vengo"
     )
     await ctx.send(embed=em)
 
