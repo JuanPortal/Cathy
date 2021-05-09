@@ -137,7 +137,7 @@ async def audio(ctx, *args):
     audio_siquemeinteresa = ["esosi", "queme", "interesa"]
     audio_tristepayaso = ["Llevo", "vida", "triste", "payaso", "rie", "fuera", "llora", "dentro"]
     audio_freezer = ["basta", "freezer", "frizer", "friser", "frezer", "freeser", "freser", "goku"]
-    audio_faraon = ["faraon", "love", "shady", "vengo"]
+    audio_faraon = ["faraon", "love", "shady", "vengo", "ohme"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
