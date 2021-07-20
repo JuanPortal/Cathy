@@ -138,6 +138,10 @@ async def audio(ctx, *args):
     audio_tristepayaso = ["Llevo", "vida", "triste", "payaso", "rie", "fuera", "llora", "dentro"]
     audio_freezer = ["basta", "freezer", "frizer", "friser", "frezer", "freeser", "freser", "goku"]
     audio_faraon = ["faraon", "love", "shady", "vengo", "ohme"]
+    audio_cagon = ["dafonseka", "cagon", "kgon", "kagon", "dafonseca"]
+    audio_meca = ["meca", "meka", "irreverencia", "irreverensia", "irreberencia", "irreberensia", "dross"]
+    audio_vizcarra = ["vizcarra", "viscarra", "vizcara", "viscara"]
+    audio_castillo = ["castillo", "castilo", "rondero"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -556,6 +560,38 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/Oh, me vengo.mp3"))
         time.sleep(2)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_cagon):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Ah, cagón.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_meca):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Es la meca de la irreverencia.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_vizcarra):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Vizcarra.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_castillo):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Castillo.mp3"))
+        time.sleep(3)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -577,7 +613,7 @@ async def audios(ctx):
         No me parece que este chico sea muy listo\n\nOe, por la ptm\n\n \
         Tú sabes que mi español está muy ratata\n\nAh, caray, soy yo\n\nAh, caray, eso sí me interesa\n\n \
         Llevo la vida de un triste payaso que ríe por fuera y llora por dentro\n\nYa basta, Freezer\n\n \
-        Oh, me vengo"
+        Oh, me vengo\n\nAh, cagón\n\nEs la meca de la irreverencia\n\nVizcarra\n\nCastillo"
     )
     await ctx.send(embed=em)
 
