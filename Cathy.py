@@ -37,8 +37,13 @@ async def di(ctx, *args):
 
     vc.source = discord.PCMVolumeTransformer(vc.source)
     vc.source.volume = 7.0
-
-    time.sleep(3)
+    
+    # print(args)
+    # print(texto)
+    numero_palabras = len(args)
+    tiempo = int(numero_palabras / 130 * 60) + 1
+    # print(f"Original: {numero_palabras / 130 * 60}\nRedondeado: {tiempo}")
+    time.sleep(tiempo)
     await ctx.guild.voice_client.disconnect()
 
 
@@ -56,7 +61,12 @@ async def say(ctx, *args):
     vc.source = discord.PCMVolumeTransformer(vc.source)
     vc.source.volume = 7.0
 
-    time.sleep(3)
+    # print(args)
+    # print(texto)
+    numero_palabras = len(args)
+    tiempo = int(numero_palabras / 130 * 60) + 1
+    # print(f"Original: {numero_palabras / 130 * 60}\nRedondeado: {tiempo}")
+    time.sleep(tiempo)
     await ctx.guild.voice_client.disconnect()
 
 
