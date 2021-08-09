@@ -153,6 +153,7 @@ async def audio(ctx, *args):
     audio_vizcarra = ["vizcarra", "viscarra", "vizcara", "viscara"]
     audio_castillo = ["castillo", "castilo", "rondero"]
     audio_dota = ["dota", "chibolo"]
+    audio_r5 = ["r5"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -611,6 +612,14 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/Dota.mp3"))
         time.sleep(36)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_r5):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/r5.ogg"))
+        time.sleep(9)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -633,7 +642,7 @@ async def audios(ctx):
         Tú sabes que mi español está muy ratata\n\nAh, caray, soy yo\n\nAh, caray, eso sí me interesa\n\n \
         Llevo la vida de un triste payaso que ríe por fuera y llora por dentro\n\nYa basta, Freezer\n\n \
         Oh, me vengo\n\nAh, cagón\n\nEs la meca de la irreverencia\n\nVizcarra\n\nCastillo\n\n \
-        Oye mierda corre báñate carajo lee un libro"
+        Oye mierda corre báñate carajo lee un libro\nR5"
     )
     await ctx.send(embed=em)
 
