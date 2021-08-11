@@ -103,7 +103,7 @@ async def audio(ctx, *args):
     audio_lapo = ["lapo", "push", "plus"]
     audio_ohno = ["ñoo", "oh"]
     audio_papi = ["papi", "cachame", "kchame", "kachame"]
-    audio_oidos = ["chorri", "mano", "oido", "qven", "queven", "pero"]
+    audio_oidos = ["chorri", "mano", "oido", "qven", "queven"]
     audio_sagasti = ["sagasti"]
     audio_auron = ["tengo", "miedo", "auron"]
     audio_nooo = ["pamela", "noo", "noni", "enojada"]
@@ -131,7 +131,7 @@ async def audio(ctx, *args):
     audio_excita = ["porque", "excita", "tanto", "exita"]
     audio_segovia = ["mama", "puta", "govia", "chancro", "vieja"]
     audio_divertido = ["divertido", "hijo", "perra"]
-    audio_fiesta = ["suponia", "esto", "fiesta", "nose"]
+    audio_fiesta = ["suponia", "fiesta", "nose"]
     audio_estrategia = ["llama", "sele", "estrategia"]
     audio_rick = ["parece", "rick", "falso"]
     audio_yalose = ["yalose", "maric"]
@@ -143,7 +143,7 @@ async def audio(ctx, *args):
     audio_listo = ["nome", "chico", "sea", "listo"]
     audio_porlaptm = ["porla", "ptm", "mare", "oepor", "por la"]
     audio_ratata = ["sabes", "español", "esta", "muy", "tata", "kata", "taka", "traka"]
-    audio_soyyo = ["soy", "yo"]
+    audio_soyyo = ["soy"]
     audio_siquemeinteresa = ["esosi", "queme", "interesa"]
     audio_tristepayaso = ["llevo", "vida", "triste", "payaso", "rie", "fuera", "llora", "dentro"]
     audio_freezer = ["basta", "freezer", "frizer", "friser", "frezer", "freeser", "freser", "goku"]
@@ -678,8 +678,8 @@ async def audios(ctx):
         Tú sabes que mi español está muy ratata\n\nAh, caray, soy yo\n\nAh, caray, eso sí me interesa\n\n \
         Llevo la vida de un triste payaso que ríe por fuera y llora por dentro\n\nYa basta, Freezer\n\n \
         Oh, me vengo\n\nAh, cagón\n\nEs la meca de la irreverencia\n\nVizcarra\n\nCastillo\n\n \
-        Oye mierda corre báñate carajo lee un libro\nR5\nYo ya estoy\nPero eres o no eres?\n\n \
-        Desahuévate, conchatumare\nTú no tienes mamita, mano?"
+        Oye mierda corre báñate carajo lee un libro\n\nR5\n\nYo ya estoy\n\nPero eres o no eres?\n\n \
+        Desahuévate, conchatumare\n\nTú no tienes mamita, mano?"
     )
     await ctx.send(embed=em)
 
