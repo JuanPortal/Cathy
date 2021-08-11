@@ -129,7 +129,7 @@ async def audio(ctx, *args):
     audio_imbecil = ["imbe", "gracioso", "inve", "crees"]
     audio_chikistrikis = ["aqui", "aki", "istri"]
     audio_excita = ["porque", "excita", "tanto", "exita"]
-    audio_segovia = ["mama", "puta", "govia", "madre", "chancro", "vieja"]
+    audio_segovia = ["mama", "puta", "govia", "chancro", "vieja"]
     audio_divertido = ["divertido", "hijo", "perra"]
     audio_fiesta = ["suponia", "esto", "fiesta", "nose"]
     audio_estrategia = ["llama", "sele", "estrategia"]
@@ -145,7 +145,7 @@ async def audio(ctx, *args):
     audio_ratata = ["sabes", "español", "esta", "muy", "tata", "kata", "taka", "traka"]
     audio_soyyo = ["soy", "yo"]
     audio_siquemeinteresa = ["esosi", "queme", "interesa"]
-    audio_tristepayaso = ["Llevo", "vida", "triste", "payaso", "rie", "fuera", "llora", "dentro"]
+    audio_tristepayaso = ["llevo", "vida", "triste", "payaso", "rie", "fuera", "llora", "dentro"]
     audio_freezer = ["basta", "freezer", "frizer", "friser", "frezer", "freeser", "freser", "goku"]
     audio_faraon = ["faraon", "love", "shady", "vengo", "ohme"]
     audio_cagon = ["dafonseka", "cagon", "kgon", "kagon", "dafonseca"]
@@ -154,6 +154,10 @@ async def audio(ctx, *args):
     audio_castillo = ["castillo", "castilo", "rondero"]
     audio_dota = ["dota", "chibolo"]
     audio_r5 = ["r5"]
+    audio_yoyaestoy = ["yoya", "estoy", "enchufe"]
+    audio_jimmysanty = ["pero", "eres", "jimmy", "santy", "santi", "jimmi", "jimy", "yimi", "yimy", "yimmi", "yimmy"]
+    audio_desahuevate = ["desahuevate", "concha", "desawebate", "desahuebate"]
+    audio_mamita = ["tuno", "tienes", "mamita", "manita"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -620,6 +624,38 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/r5.ogg"))
         time.sleep(9)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_yoyaestoy):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Yo ya estoy.mp3"))
+        time.sleep(1)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_jimmysanty):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Pero eres o no eres.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_desahuevate):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Desahuévate, conchatumare.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_mamita):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Tú no tienes mamita, mano.mp3"))
+        time.sleep(2)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -642,7 +678,8 @@ async def audios(ctx):
         Tú sabes que mi español está muy ratata\n\nAh, caray, soy yo\n\nAh, caray, eso sí me interesa\n\n \
         Llevo la vida de un triste payaso que ríe por fuera y llora por dentro\n\nYa basta, Freezer\n\n \
         Oh, me vengo\n\nAh, cagón\n\nEs la meca de la irreverencia\n\nVizcarra\n\nCastillo\n\n \
-        Oye mierda corre báñate carajo lee un libro\nR5"
+        Oye mierda corre báñate carajo lee un libro\nR5\nYo ya estoy\nPero eres o no eres?\n\n \
+        Desahuévate, conchatumare\nTú no tienes mamita, mano?"
     )
     await ctx.send(embed=em)
 
