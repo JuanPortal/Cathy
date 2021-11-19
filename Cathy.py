@@ -671,7 +671,7 @@ async def audio(ctx, *args):
         await ctx.channel.purge(limit=1)
         channel = ctx.message.author.voice.channel
         vc = await channel.connect()
-        vc.play(discord.FFmpegPCMAudio("audios/Wtf mi cerebro.mp3"))
+        vc.play(discord.FFmpegPCMAudio("audios/Quién pucta le dio droga a la llama.mp3"))
         time.sleep(21)
         await ctx.guild.voice_client.disconnect()
 
