@@ -122,14 +122,14 @@ async def audio(ctx, *args):
     audio_nolose = ["dime", "nolose"]
     audio_algoandamal = ["algo", "anda", "mal"]
     audio_manuelgold = ["quee", "kee", "qee"]
-    audio_oferton = ["pt", "ofert"]
+    audio_oferton = ["ofert"]
     audio_escuchame = ["escuchame", "huevon", "webon", "wbn", "huebon", "wevon", "wn"]
     audio_aquaman = ["enfermo", "bruce", "wayne", "batman", "aquaman", "estas"]
     audio_yamete = ["yamete", "kudasai", "udasa"]
     audio_imbecil = ["imbe", "gracioso", "inve", "crees"]
     audio_chikistrikis = ["aqui", "aki", "istri"]
     audio_excita = ["porque", "excita", "tanto", "exita"]
-    audio_segovia = ["mama", "puta", "govia", "chancro", "vieja"]
+    audio_segovia = ["mama", "unaputa", "govia", "chancro"]
     audio_divertido = ["divertido", "hijo", "perra"]
     audio_fiesta = ["suponia", "fiesta", "nose"]
     audio_estrategia = ["llama", "sele", "estrategia"]
@@ -159,6 +159,7 @@ async def audio(ctx, *args):
     audio_desahuevate = ["desahuevate", "concha", "desawebate", "desahuebate"]
     audio_mamita = ["tuno", "tienes", "mamita", "manita"]
     audio_wtfmicerebro = ["wtf", "wdf", "cerebro"]
+    audio_drogaalallama = ["pucta", "droga", "llama", "ledio", "puta"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -665,6 +666,14 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/Wtf mi cerebro.mp3"))
         time.sleep(8)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_drogaalallama):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Wtf mi cerebro.mp3"))
+        time.sleep(21)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -688,7 +697,8 @@ async def audios(ctx):
         Llevo la vida de un triste payaso que ríe por fuera y llora por dentro\n\nYa basta, Freezer\n\n \
         Oh, me vengo\n\nAh, cagón\n\nEs la meca de la irreverencia\n\nVizcarra\n\nCastillo\n\n \
         Oye mierda corre báñate carajo lee un libro\n\nR5\n\nYo ya estoy\n\nPero eres o no eres?\n\n \
-        Desahuévate, conchatumare\n\nTú no tienes mamita, mano?\n\nWtf mi cerebro"
+        Desahuévate, conchatumare\n\nTú no tienes mamita, mano?\n\nWtf mi cerebro\n\n \
+        Quién pucta le dio droga a la llama?"
     )
     await ctx.send(embed=em)
 
