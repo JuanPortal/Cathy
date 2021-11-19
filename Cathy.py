@@ -158,6 +158,7 @@ async def audio(ctx, *args):
     audio_jimmysanty = ["pero", "eres", "jimmy", "santy", "santi", "jimmi", "jimy", "yimi", "yimy", "yimmi", "yimmy"]
     audio_desahuevate = ["desahuevate", "concha", "desawebate", "desahuebate"]
     audio_mamita = ["tuno", "tienes", "mamita", "manita"]
+    audio_wtfmicerebro = ["wtf", "wdf", "cerebro"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -656,6 +657,14 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/Tú no tienes mamita, mano.mp3"))
         time.sleep(2)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_wtfmicerebro):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Wtf mi cerebro.mp3"))
+        time.sleep(8)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -679,7 +688,7 @@ async def audios(ctx):
         Llevo la vida de un triste payaso que ríe por fuera y llora por dentro\n\nYa basta, Freezer\n\n \
         Oh, me vengo\n\nAh, cagón\n\nEs la meca de la irreverencia\n\nVizcarra\n\nCastillo\n\n \
         Oye mierda corre báñate carajo lee un libro\n\nR5\n\nYo ya estoy\n\nPero eres o no eres?\n\n \
-        Desahuévate, conchatumare\n\nTú no tienes mamita, mano?"
+        Desahuévate, conchatumare\n\nTú no tienes mamita, mano?\n\nWtf mi cerebro"
     )
     await ctx.send(embed=em)
 
