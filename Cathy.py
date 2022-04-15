@@ -161,6 +161,8 @@ async def audio(ctx, *args):
     audio_wtfmicerebro = ["wtf", "wdf", "cerebro"]
     audio_drogaalallama = ["pucta", "droga", "llama", "ledio", "puta"]
     audio_tepha = ["asco"]
+    audio_pipipi = ["pipi"]
+    audio_yonoelegi = ["cosa", "yonoelegi", "seresta"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -683,6 +685,22 @@ async def audio(ctx, *args):
         vc.play(discord.FFmpegPCMAudio("audios/Tepha.ogg"))
         time.sleep(3)
         await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_pipipi):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Pipipi.mp3"))
+        time.sleep(7)
+        await ctx.guild.voice_client.disconnect()
+        
+    elif any(word in arreglar(str(args)).lower() for word in audio_yonoelegi):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Yo no escogí ser esa cosa.mp3"))
+        time.sleep(4)
+        await ctx.guild.voice_client.disconnect()
 
 
 @client.command(pass_context=True)
@@ -707,7 +725,7 @@ async def audios(ctx):
         Oh, me vengo\n\nAh, cagón\n\nEs la meca de la irreverencia\n\nVizcarra\n\nCastillo\n\n \
         Oye mierda corre báñate carajo lee un libro\n\nR5\n\nYo ya estoy\n\nPero eres o no eres?\n\n \
         Desahuévate, conchatumare\n\nTú no tienes mamita, mano?\n\nWtf mi cerebro\n\n \
-        Quién pucta le dio droga a la llama?\n\nPuta, qué asco"
+        Quién pucta le dio droga a la llama?\n\nPuta, qué asco\n\nPipipi\n\nYo no escogí ser esa cosa"
     )
     await ctx.send(embed=em)
 
