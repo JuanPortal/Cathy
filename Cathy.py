@@ -707,7 +707,7 @@ async def audio(ctx, *args):
 async def audios(ctx):
     em = discord.Embed(
         title="Audios",
-        description="\nCardi\n\nCuack\n\nGaaa\n\nLapo\n\nTengo miedo\n\nOh ñooo\n\n \
+        description="\nCardi\n\nCuack\n\nGaaaa\n\nLapo\n\nTengo miedo\n\nOh ñooo\n\n \
         Pero qué ven mis oídos, mano\n\nPapi, cáchame\n\nSagasti\n\nA la mierda, Tilín\n\nChupetín\n\n \
         No shea bobo\n\nAu, mierda\n\n¿Ahora qué?\n\nEquipo Alfa Buena Maravilla Onda \
         Dinamita Escuadrón Lobo\n\nEn ese momento... Cell sintió el verdadero terror\n\n \
