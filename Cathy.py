@@ -3,6 +3,10 @@ import discord
 from gtts import gTTS
 import time
 import random
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 client = commands.Bot(command_prefix="$")
 client.remove_command("help")
@@ -163,6 +167,7 @@ async def audio(ctx, *args):
     audio_tepha = ["asco"]
     audio_pipipi = ["pipi"]
     audio_yonoelegi = ["cosa", "yonoelegi", "seresta"]
+    audio_nani = ["nani"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -702,6 +707,14 @@ async def audio(ctx, *args):
         time.sleep(4)
         await ctx.guild.voice_client.disconnect()
 
+    elif any(word in arreglar(str(args)).lower() for word in audio_nani):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Nani.mp3"))
+        time.sleep(1)
+        await ctx.guild.voice_client.disconnect()
+
 
 @client.command(pass_context=True)
 async def audios(ctx):
@@ -725,9 +738,10 @@ async def audios(ctx):
         Oh, me vengo\n\nAh, cagón\n\nEs la meca de la irreverencia\n\nVizcarra\n\nCastillo\n\n \
         Oye mierda corre báñate carajo lee un libro\n\nR5\n\nYo ya estoy\n\nPero eres o no eres?\n\n \
         Desahuévate, conchatumare\n\nTú no tienes mamita, mano?\n\nWtf mi cerebro\n\n \
-        Quién pucta le dio droga a la llama?\n\nPuta, qué asco\n\nPipipi\n\nYo no escogí ser esa cosa"
+        Quién pucta le dio droga a la llama?\n\nPuta, qué asco\n\nPipipi\n\nYo no escogí ser esa cosa\n\n \
+        Nani"
     )
     await ctx.send(embed=em)
 
 
-client.run("ODA1NDg1MTk5MDY0NDMyNjgz.YBbkjA.-EWlOYH_3e6QPdMcXB6tjXasKYI")
+client.run(os.getenv("TOKEN"))
