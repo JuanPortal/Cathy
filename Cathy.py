@@ -3,8 +3,6 @@ import discord
 from gtts import gTTS
 import time
 import random
-import os
-from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -744,4 +742,4 @@ async def audios(ctx):
     await ctx.send(embed=em)
 
 
-client.run(os.getenv("TOKEN"))
+client.run("ODA1NDg1MTk5MDY0NDMyNjgz.GUWPqa.ablJj1fRkgXf9rrepJN24cev3Ta9mDmuhoxQKo")
