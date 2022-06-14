@@ -3,6 +3,7 @@ import discord
 from gtts import gTTS
 import time
 import random
+import config
 
 client = commands.Bot(command_prefix="$")
 client.remove_command("help")
@@ -758,4 +759,4 @@ async def audios(ctx):
     await ctx.send(embed=em)
 
 
-client.run("ODA1NDg1MTk5MDY0NDMyNjgz.GUWPqa.ablJj1fRkgXf9rrepJN24cev3Ta9mDmuhoxQKo")
+client.run(config.token)
