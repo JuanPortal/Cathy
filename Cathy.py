@@ -4,8 +4,6 @@ from gtts import gTTS
 import time
 import random
 
-load_dotenv()
-
 client = commands.Bot(command_prefix="$")
 client.remove_command("help")
 
