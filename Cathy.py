@@ -165,6 +165,7 @@ async def audio(ctx, *args):
     audio_yonoelegi = ["cosa", "yonoelegi", "seresta"]
     audio_nani = ["nani"]
     audio_onichan = ["onichan"]
+    audio_uwu = ["uwu"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -720,6 +721,14 @@ async def audio(ctx, *args):
         time.sleep(3)
         await ctx.guild.voice_client.disconnect()
 
+    elif any(word in arreglar(str(args)).lower() for word in audio_uwu):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/UwU.mp3"))
+        time.sleep(1)
+        await ctx.guild.voice_client.disconnect()
+
 
 @client.command(pass_context=True)
 async def audios(ctx):
@@ -744,7 +753,7 @@ async def audios(ctx):
         Oye mierda corre báñate carajo lee un libro\n\nR5\n\nYo ya estoy\n\nPero eres o no eres?\n\n \
         Desahuévate, conchatumare\n\nTú no tienes mamita, mano?\n\nWtf mi cerebro\n\n \
         Quién pucta le dio droga a la llama?\n\nPuta, qué asco\n\nPipipi\n\nYo no escogí ser esa cosa\n\n \
-        Nani\n\nOnichan"
+        Nani\n\nOnichan\n\nUwU"
     )
     await ctx.send(embed=em)
 
