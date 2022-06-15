@@ -3,12 +3,12 @@ import discord
 from gtts import gTTS
 import time
 import random
-import config
 
-import os
+# import config
+# import os
 
-import boto
-conn = boto.connect_s3()
+# import boto
+# conn = boto.connect_s3()
 
 client = commands.Bot(command_prefix="$")
 client.remove_command("help")
@@ -764,4 +764,5 @@ async def audios(ctx):
     await ctx.send(embed=em)
 
 
-client.run(os.environ["token"])
+# client.run(os.environ["token"])
+client.run("ODA1NDg1MTk5MDY0NDMyNjgz.GUWPqa.ablJj1fRkgXf9rrepJN24cev3Ta9mDmuhoxQKo")
