@@ -7,8 +7,8 @@ import config
 
 import os
 
-from boto.s3.connection import S3Connection
-conn = S3Connection()
+import boto
+conn = boto.connect_s3()
 
 client = commands.Bot(command_prefix="$")
 client.remove_command("help")
@@ -764,4 +764,4 @@ async def audios(ctx):
     await ctx.send(embed=em)
 
 
-client.run(os.environ.get('token'))
+client.run(os.environ["token"])
