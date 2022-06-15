@@ -5,10 +5,6 @@ import time
 import random
 
 import os
-# import config
-
-# import boto
-# conn = boto.connect_s3()
 
 client = commands.Bot(command_prefix="$")
 client.remove_command("help")
@@ -44,11 +40,8 @@ async def di(ctx, *args):
     vc.source = discord.PCMVolumeTransformer(vc.source)
     vc.source.volume = 7.0
     
-    # print(args)
-    # print(texto)
     numero_palabras = len(args)
     tiempo = int(numero_palabras / 130 * 60) + 1
-    # print(f"Original: {numero_palabras / 130 * 60}\nRedondeado: {tiempo}")
     time.sleep(tiempo)
     await ctx.guild.voice_client.disconnect()
 
@@ -67,11 +60,8 @@ async def say(ctx, *args):
     vc.source = discord.PCMVolumeTransformer(vc.source)
     vc.source.volume = 7.0
 
-    # print(args)
-    # print(texto)
     numero_palabras = len(args)
     tiempo = int(numero_palabras / 130 * 60) + 1
-    # print(f"Original: {numero_palabras / 130 * 60}\nRedondeado: {tiempo}")
     time.sleep(tiempo)
     await ctx.guild.voice_client.disconnect()
 
@@ -166,7 +156,7 @@ async def audio(ctx, *args):
     audio_mamita = ["tuno", "tienes", "mamita", "manita"]
     audio_wtfmicerebro = ["wtf", "wdf", "cerebro"]
     audio_drogaalallama = ["pucta", "droga", "llama", "ledio", "puta"]
-    audio_tepha = ["asco"]
+    audio_tepha = ["asco", "collene", "sthephany"]
     audio_pipipi = ["pipi"]
     audio_yonoelegi = ["cosa", "yonoelegi", "seresta"]
     audio_nani = ["nani"]
@@ -765,4 +755,3 @@ async def audios(ctx):
 
 
 client.run(os.getenv("token"))
-# client.run("ODA1NDg1MTk5MDY0NDMyNjgz.GUWPqa.ablJj1fRkgXf9rrepJN24cev3Ta9mDmuhoxQKo")
