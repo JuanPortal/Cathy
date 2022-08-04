@@ -162,6 +162,8 @@ async def audio(ctx, *args):
     audio_nani = ["nani"]
     audio_onichan = ["onichan"]
     audio_uwu = ["uwu"]
+    audio_rico1 = ["rico1"]
+    audio_rico2 = ["rico2"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -723,6 +725,22 @@ async def audio(ctx, *args):
         vc = await channel.connect()
         vc.play(discord.FFmpegPCMAudio("audios/UwU.mp3"))
         time.sleep(1)
+        await ctx.guild.voice_client.disconnect()
+
+    elif any(word in arreglar(str(args)).lower() for word in audio_rico1):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Rico1.ogg"))
+        time.sleep(5)
+        await ctx.guild.voice_client.disconnect()
+
+    elif any(word in arreglar(str(args)).lower() for word in audio_rico2):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Rico2.ogg"))
+        time.sleep(13)
         await ctx.guild.voice_client.disconnect()
 
 
