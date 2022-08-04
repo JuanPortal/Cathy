@@ -9,4 +9,6 @@ Comandos:
 - $audios muestra la lista de audios
 - $help para obtener más información
 
+Link: https://discord.com/oauth2/authorize?client_id=805485199064432683&permissions=380141567232&scope=bot
+
 ![Cathy](https://user-images.githubusercontent.com/78442505/164916726-43c9f218-acbe-4336-9da6-17f85e0f8536.png)
