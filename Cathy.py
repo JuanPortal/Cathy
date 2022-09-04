@@ -164,6 +164,7 @@ async def audio(ctx, *args):
     audio_uwu = ["uwu"]
     audio_rico1 = ["rico1"]
     audio_rico2 = ["rico2"]
+    audio_zeldrix = ["zeld"]
 
     if any(word in arreglar(str(args)).lower() for word in audio_tilin):
         await ctx.channel.purge(limit=1)
@@ -743,6 +744,14 @@ async def audio(ctx, *args):
         time.sleep(13)
         await ctx.guild.voice_client.disconnect()
 
+    elif any(word in arreglar(str(args)).lower() for word in audio_zeldrix):
+        await ctx.channel.purge(limit=1)
+        channel = ctx.message.author.voice.channel
+        vc = await channel.connect()
+        vc.play(discord.FFmpegPCMAudio("audios/Zeldrix.mp3"))
+        time.sleep(4)
+        await ctx.guild.voice_client.disconnect()
+
 
 @client.command(pass_context=True)
 async def audios(ctx):
@@ -767,7 +776,7 @@ async def audios(ctx):
         Oye mierda corre báñate carajo lee un libro\n\nR5\n\nYo ya estoy\n\nPero eres o no eres?\n\n \
         Desahuévate, conchatumare\n\nTú no tienes mamita, mano?\n\nWtf mi cerebro\n\n \
         Quién pucta le dio droga a la llama?\n\nPuta, qué asco\n\nPipipi\n\nYo no escogí ser esa cosa\n\n \
-        Nani\n\nOnichan\n\nUwU"
+        Nani\n\nOnichan\n\nUwU\n\nSi van a estar agarrados de la mano avísenme para que me agarren la pinga"
     )
     await ctx.send(embed=em)
 
