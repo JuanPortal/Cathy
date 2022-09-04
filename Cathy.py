@@ -776,7 +776,7 @@ async def audios(ctx):
         Oye mierda corre báñate carajo lee un libro\n\nR5\n\nYo ya estoy\n\nPero eres o no eres?\n\n \
         Desahuévate, conchatumare\n\nTú no tienes mamita, mano?\n\nWtf mi cerebro\n\n \
         Quién pucta le dio droga a la llama?\n\nPuta, qué asco\n\nPipipi\n\nYo no escogí ser esa cosa\n\n \
-        Nani\n\nOnichan\n\nUwU\n\nSi van a estar agarrados de la mano avísenme para que me agarren la pinga"
+        Nani\n\nOnichan\n\nUwU\n\nSi van a estar agarrados de la mano díganme p para que me agarren la pinga"
     )
     await ctx.send(embed=em)
 
