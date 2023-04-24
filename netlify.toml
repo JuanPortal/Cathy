@@ -1,6 +1,0 @@
-[build]
-  command = "source /opt/buildhome/pythonpython-3.7/bin/activate && python Cathy.py"
-  publish = "/opt/build/repo/dev/null"
-
-[install]
-  command = "pip install --upgrade pip && pip install -r requirements.txt"
