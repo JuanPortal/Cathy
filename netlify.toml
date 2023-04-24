@@ -1,6 +1,18 @@
 [build]
-  command = "source /opt/buildhome/pythonpython-3.8.5/bin/activate && python Cathy.py"
-  publish = ""
-
+  command = "source /opt/buildhome/pythonpython-3.8/bin/activate && python Cathy.py"
+  publish = "/dev/null"
+  
+[[plugins]]
+  package = "netlify-plugin-cache"
+  
 [build.environment]
-  PYTHON_VERSION = "3.8"
+  PIP_UPGRADE = "1"
+  
+[build.environment.variables]
+  PATH = "/opt/buildhome/pythonpython-3.8/bin:/opt/buildhome/pythonpython3.8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+[install]
+  command = """
+    pip install --upgrade pip
+    pip install -r requirements.txt
+  """
