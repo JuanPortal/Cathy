@@ -1,5 +1,5 @@
 [build]
-  command = "source /opt/buildhome/pythonpython-3.8/bin/activate && python Cathy.py"
+  command = "source /opt/buildhome/pythonpython-3.7/bin/activate && python Cathy.py"
   publish = "/opt/build/repo/dev/null"
 
 [install]
@@ -10,7 +10,6 @@
   CONTEXT = "production"
   DEPLOY_PRIME_URL = "https://main--cathybot.netlify.app"
   DEPLOY_URL = "https://6445ddb303dc5f49082ded20--cathybot.netlify.app"
-  DISCORD_BOT_TOKEN = "ODA1NDg1MTk5MDY0NDMyNjgz.GzVXlh.34zJpiK0_mwKalPm_MW3By4GKpd_iBdE-VbUio"
   GO_VERSION = "1.19.x"
   NETLIFY_IMAGES_CDN_DOMAIN = "d33wubrfki0l68.cloudfront.net"
   SITE_ID = "40803ac7-dbef-4155-8fc0-20ecfd122f28"
