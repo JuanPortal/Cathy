@@ -4,18 +4,3 @@
 
 [install]
   command = "pip install --upgrade pip && pip install -r requirements.txt"
-
-[build.environment]
-  BRANCH = "main"
-  CONTEXT = "production"
-  DEPLOY_PRIME_URL = "https://main--cathybot.netlify.app"
-  DEPLOY_URL = "https://6445ddb303dc5f49082ded20--cathybot.netlify.app"
-  GO_VERSION = "1.19.x"
-  NETLIFY_IMAGES_CDN_DOMAIN = "d33wubrfki0l68.cloudfront.net"
-  SITE_ID = "40803ac7-dbef-4155-8fc0-20ecfd122f28"
-  SITE_NAME = "cathybot"
-  URL = "https://cathybot.netlify.app"
-  PIP_UPGRADE = "1"
-
-[[plugins]]
-  package = "netlify-plugin-cache"
