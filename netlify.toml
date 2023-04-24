@@ -1,3 +1,6 @@
 [build]
   command = "source /opt/buildhome/pythonpython-3.8/bin/activate && python Cathy.py"
+  publish = ""
 
+[build.environment]
+  PYTHON_VERSION = "3.8"
