@@ -31,11 +31,11 @@ async def di(ctx, *args):
     await ctx.channel.purge(limit=1)
     texto = "".join(args)
     myobj = gTTS(text=texto, lang="es", slow=False)
-    myobj.save("voz.pcm")
+    myobj.save("voice.pcm")
 
     channel = ctx.message.author.voice.channel
     vc = await channel.connect()
-    vc.play(discord.FFmpegPCMAudio('voz.pcm'))
+    vc.play(discord.FFmpegPCMAudio('voice.pcm'))
 
     vc.source = discord.PCMVolumeTransformer(vc.source)
     vc.source.volume = 7.0
@@ -51,11 +51,11 @@ async def say(ctx, *args):
     await ctx.channel.purge(limit=1)
     texto = "".join(args)
     myobj = gTTS(text=texto, lang="en", slow=False)
-    myobj.save("voz.pcm")
+    myobj.save("voice.pcm")
 
     channel = ctx.message.author.voice.channel
     vc = await channel.connect()
-    vc.play(discord.FFmpegPCMAudio('voz.pcm'))
+    vc.play(discord.FFmpegPCMAudio('voice.pcm'))
 
     vc.source = discord.PCMVolumeTransformer(vc.source)
     vc.source.volume = 7.0
