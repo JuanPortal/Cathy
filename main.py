@@ -781,4 +781,4 @@ async def audios(ctx):
     await ctx.send(embed=em)
 
 
-client.run(os.getenv("DISCORD_BOT_TOKEN"))
+client.run(os.environ["TOKEN"])
